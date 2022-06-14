@@ -61,6 +61,8 @@ public class Semana3_Tarea_Ejer5y6 {
         int aprobados = 0;
         int reprobados = 0;
         int counter = 0;
+        int numero_mayor = 0;
+        int numero_menor = 100;
         
         boolean flag = true;
         
@@ -68,12 +70,20 @@ public class Semana3_Tarea_Ejer5y6 {
             int nota = Integer.parseInt(JOptionPane.showInputDialog("Por favor "
                     + "ingrese la nota del siguiente estudiante"));
             
+            if (nota > numero_mayor){
+                numero_mayor = nota;
+            }
+            else if (nota < numero_menor ){
+                numero_menor = nota;
+            }
+            
+            
+            
             if (nota >= 70){
-                aprobados += 1;
-                
-            }else{
+                aprobados += 1;    
+            }
+            else{
                 reprobados += 1;
-                counter += 1;
                 flag = false;
             }
             
@@ -93,6 +103,12 @@ public class Semana3_Tarea_Ejer5y6 {
         
         JOptionPane.showMessageDialog(null,"La cantidad de estudiantes "
                 + "reprobados son: " + reprobados);
+        
+        JOptionPane.showMessageDialog(null,"La nota mas baja fue: "
+                + "" + numero_menor);
+        
+        JOptionPane.showMessageDialog(null,"La nota mas alta fue: "
+                + "" + numero_mayor);
     }
     
 }
